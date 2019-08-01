@@ -1,0 +1,2 @@
+export const GET_PLAYER = 'GET_PLAYER';
+export const GET_YOUTUBE_VIDEO = 'GET_YOUTUBE_VIDEO';

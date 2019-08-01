@@ -1,0 +1,43 @@
+.base-layout {
+  width: 30%;
+  max-width: 300px;
+  margin: 0 auto; }
+
+.wrapper {
+  padding: 30px 0px; }
+  .wrapper .container {
+    padding: 0px 15px;
+    margin-top: 10px; }
+    .wrapper .container .input-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px; }
+      .wrapper .container .input-container input[type='number'] {
+        width: 4em; }
+      .wrapper .container .input-container.number {
+        padding-left: 15px;
+        justify-content: flex-start; }
+        .wrapper .container .input-container.number .container-title {
+          margin-right: 10px; }
+      .wrapper .container .input-container.level-2 {
+        padding-left: 15px; }
+
+.container-title {
+  display: flex;
+  flex-direction: row;
+  align-items: center; }
+  .container-title.stat {
+    margin-bottom: 10px; }
+
+.square {
+  height: 14px;
+  width: 14px;
+  margin-right: 5px; }
+
+.img-container {
+  margin-bottom: 10px; }
+  .img-container img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover; }
