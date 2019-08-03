@@ -1,6 +1,5 @@
-import youtube from 'youtube-finder';
-import { APIkey } from '../youtube/APIkey.js';
 
+// service to get data from API server
 export const getPlayerAPI = (url) => {
   return new Promise((resolve, reject) => {
     fetch(url)
@@ -13,21 +12,21 @@ export const getPlayerAPI = (url) => {
   });
 }
 
-export const getVideoFromYouTube = (keyword) => {
+// service to send data to API server
+export const sendPlayerDataAPI = (url, data) => {
   return new Promise((resolve, reject) => {
-    const client = youtube.createClient({ key: APIkey});
-    const params = {
-      part: 'snippet',
-      q: keyword,
-      type: 'video',
-      maxResults: 1
-    }
-    client.search(params, (err, data) => {
-      if (err) {
-        reject(err);
-      } else {
-        resolve(data.items[0]);
-      }
+    fetch(url, {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    })
+    .then(res => {
+      resolve('Data successfully uploaded');
+    }, err => {
+      reject(err);
     });
   });
-};
+}

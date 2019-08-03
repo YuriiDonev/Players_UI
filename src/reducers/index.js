@@ -1,9 +1,7 @@
 import player from './player-reducer.js';
-import video from './video-reducer.js';
 
 const rootReducer = {
-  player,
-  video
+  player
 };
 
 export default rootReducer;
