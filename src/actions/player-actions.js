@@ -1,6 +1,8 @@
-import { GET_PLAYER, GET_YOUTUBE_VIDEO } from './types.js';
-import { getPlayerAPI, getVideoFromYouTube } from '../service';
+import { GET_PLAYER } from './types.js';
+import { getPlayerAPI, sendPlayerDataAPI } from '../service';
 
+
+// action to get data from API server
 export const getPlayer = url => async dispatch => {
   try {
     let player = await getPlayerAPI(url);
@@ -8,11 +10,16 @@ export const getPlayer = url => async dispatch => {
       type: GET_PLAYER,
       payload: player
     });
-    let video = await getVideoFromYouTube(player.name.first);
-    dispatch({
-      type: GET_YOUTUBE_VIDEO,
-      payload: video
-    });
+  } catch (err) {
+    console.error(err);
+  }
+};
+
+// action to send data to API server
+export const sendPlayer = (url, data) => async dispatch => {
+  try {
+    let res = await sendPlayerDataAPI(url, data);
+    console.log(res);
   } catch (err) {
     console.error(err);
   }
