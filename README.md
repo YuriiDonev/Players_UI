@@ -13,4 +13,4 @@ If you have changed any of input fields, it won't be updated with new data and w
 You can click on 'Save' button and all updated data will be send to fake API server.
 To check it - you can open console and see your data.
 Also you can navigate to Netwok tab and check 'http://fakerestapi.azurewebsites.net/api/Activities' request and response.
-In case of success you will see status code 200 in server request block and 'Data successfully uploaded' message in console.
+In case of success you will see status code 200 in server request block and 'Data successfully uploaded' message in console (Work with localhost, returns err with Github Pages)
