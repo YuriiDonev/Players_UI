@@ -8,7 +8,7 @@ class Input extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
-      value: '',
+      value: this.props.value || '',
       isModified: false
     }
   }
